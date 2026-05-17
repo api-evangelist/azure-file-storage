@@ -73,7 +73,7 @@ common:
     url: https://learn.microsoft.com/en-us/azure/storage/files/
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/storage/files/
-  - type: Sign Up
+  - type: SignUp
     url: https://azure.microsoft.com/en-us/free/
 maintainers:
   - FN: Kin Lane
