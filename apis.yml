@@ -10,7 +10,7 @@ description: >-
   access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for
   authentication, while the control plane uses Azure Resource Manager.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Storage
   - File Storage
