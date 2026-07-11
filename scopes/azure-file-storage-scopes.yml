@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-file-storage-openapi.yml
+schemes:
+- name: entra
+  source: openapi/azure-file-storage-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+  description: Microsoft Entra ID OAuth 2.0 bearer token
+scopes:
+- scope: https://storage.azure.com/.default
+  description: Azure Storage data plane access
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/azure-file-storage-openapi.yml

@@ -67,6 +67,8 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
 
 common:
+  - type: OAuthScopes
+    url: scopes/azure-file-storage-scopes.yml
   - type: Website
     url: https://azure.microsoft.com/en-us/products/storage/files/
   - type: Documentation
@@ -75,6 +77,8 @@ common:
     url: https://azure.microsoft.com/en-us/pricing/details/storage/files/
   - type: Signup
     url: https://azure.microsoft.com/en-us/free/
+  - url: https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
