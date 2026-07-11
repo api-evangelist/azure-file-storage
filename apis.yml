@@ -67,6 +67,12 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/azure-file-storage-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/azure-file-storage-domain-security.yml
+  - type: Authentication
+    url: authentication/azure-file-storage-authentication.yml
   - type: OAuthScopes
     url: scopes/azure-file-storage-scopes.yml
   - type: Website
