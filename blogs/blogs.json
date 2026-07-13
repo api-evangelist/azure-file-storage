@@ -1,0 +1,14 @@
+{
+  "repo": "azure-file-storage",
+  "feeds": [
+    {
+      "source": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog",
+      "feed_url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 21
+}

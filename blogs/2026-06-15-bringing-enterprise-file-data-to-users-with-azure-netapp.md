@@ -1,0 +1,8 @@
+---
+title: "Bringing Enterprise File Data to Users with Azure NetApp Files, Microsoft Foundry, and M365 Copilot"
+url: "https://techcommunity.microsoft.com/t5/azure-storage-blog/bringing-enterprise-file-data-to-users-with-azure-netapp-files/ba-p/4528002"
+date: "2026-06-15"
+author: "GeertVanTeylingen"
+feed_url: "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog"
+---
+Table of Contents Introduction Why the user experience layer matters in enterprise AI Microsoft Foundry: Orchestrating enterprise AI agents The Copilot agent as the enterprise user experience End‑to‑end user query flow Why this pattern works for regulated and complex environments Extending Copilot beyond SharePoint‑centric scenarios From storage to knowledge to action Key takeaway Put the architecture into practice Learn more Introduction In Part 1, From Enterprise File Storage to an AI-Ready Data Foundation using Azure NetApp Files and OneLake , we established a zero‑copy data foundation that makes enterprise file data AI‑addressable using Azure NetApp Files and Microsoft OneLake, without migration, duplication, or workflow disruption. In Part 2, From File Data to AI‑Powered Knowledge Pipelines using Azure NetApp Files object REST API , we showed how that foundation is activated through a knowledge pipeline using Azure AI Search and Azure OpenAI, transforming unstructured files into a living, queryable knowledge system grounded in Retrieval‑Augmented Generation (RAG). In this final part, we focus on the user experience : how this architecture is safely and effectively surfaced to end users through enterprise AI agents, including Copilot, where employees already work.
