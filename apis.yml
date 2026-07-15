@@ -67,6 +67,8 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/azure-file-storage-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/azure-file-storage-vulnerability-disclosure.yml
   - type: DomainSecurity
