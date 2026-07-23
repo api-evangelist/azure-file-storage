@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: Azure Files FileREST Account API
+  version: '2023-01-03'
+  description: 'Data-plane HTTPS REST API for Azure Files. Operations are scoped to the
+
+    storage account (`https://{account-name}.file.core.windows.net`), with sub-paths
+
+    for shares, directories, and files. Many operations select a sub-resource via the
+
+    `?comp=` and `?restype=` query parameters (Azure Storage convention).
+
+
+    Authentication: Shared Key (`SharedKey` Authorization header), Shared Access
+
+    Signature (SAS tokens appended as query parameters), or Microsoft Entra ID
+
+    OAuth 2.0 bearer tokens.
+
+    '
+  contact:
+    name: Azure Files FileREST API
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+servers:
+- url: https://{account-name}.file.core.windows.net
+  description: Azure Files storage account endpoint
+  variables:
+    account-name:
+      default: myaccount
+      description: Storage account name
+tags:
+- name: Account
+  description: Account-level file service operations
+paths:
+  /:
+    get:
+      summary: List shares or get file service properties
+      description: '- With `?comp=list` lists shares in the account.
+
+        - With `?restype=service&comp=properties` returns service properties.
+
+        '
+      operationId: listSharesOrGetServiceProperties
+      tags:
+      - Account
+      parameters:
+      - in: query
+        name: comp
+        schema:
+          type: string
+          enum:
+          - list
+          - properties
+      - in: query
+        name: restype
+        schema:
+          type: string
+          enum:
+          - service
+      - in: query
+        name: prefix
+        schema:
+          type: string
+      - in: query
+        name: marker
+        schema:
+          type: string
+      - in: query
+        name: maxresults
+        schema:
+          type: integer
+      - in: header
+        name: x-ms-version
+        required: true
+        schema:
+          type: string
+          default: '2023-01-03'
+      - in: header
+        name: x-ms-date
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: XML listing or service properties
+          content:
+            application/xml:
+              schema:
+                type: string
+      security:
+      - sharedKey: []
+      - entra: []
+components:
+  securitySchemes:
+    sharedKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Shared Key authorization header in the form `SharedKey {account}:{signature}`,
+
+        where signature is an HMAC-SHA256 of the canonicalized request.
+
+        See https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key
+
+        '
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://storage.azure.com/.default: Azure Storage data plane access

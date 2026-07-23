@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Azure Files FileREST Account Shares API
+  version: '2023-01-03'
+  description: 'Data-plane HTTPS REST API for Azure Files. Operations are scoped to the
+
+    storage account (`https://{account-name}.file.core.windows.net`), with sub-paths
+
+    for shares, directories, and files. Many operations select a sub-resource via the
+
+    `?comp=` and `?restype=` query parameters (Azure Storage convention).
+
+
+    Authentication: Shared Key (`SharedKey` Authorization header), Shared Access
+
+    Signature (SAS tokens appended as query parameters), or Microsoft Entra ID
+
+    OAuth 2.0 bearer tokens.
+
+    '
+  contact:
+    name: Azure Files FileREST API
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+servers:
+- url: https://{account-name}.file.core.windows.net
+  description: Azure Files storage account endpoint
+  variables:
+    account-name:
+      default: myaccount
+      description: Storage account name
+tags:
+- name: Shares
+  description: File share operations
+paths:
+  /{shareName}:
+    parameters:
+    - in: path
+      name: shareName
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: restype
+      required: true
+      schema:
+        type: string
+        enum:
+        - share
+    - in: header
+      name: x-ms-version
+      required: true
+      schema:
+        type: string
+        default: '2023-01-03'
+    - in: header
+      name: x-ms-date
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Create a share
+      operationId: createShare
+      tags:
+      - Shares
+      parameters:
+      - in: header
+        name: x-ms-share-quota
+        schema:
+          type: integer
+      responses:
+        '201':
+          description: Share created
+      security:
+      - sharedKey: []
+      - entra: []
+    get:
+      summary: Get share properties or metadata
+      operationId: getShareProperties
+      tags:
+      - Shares
+      parameters:
+      - in: query
+        name: comp
+        schema:
+          type: string
+          enum:
+          - metadata
+          - acl
+          - snapshot
+          - filepermission
+          - stats
+      responses:
+        '200':
+          description: Share properties
+      security:
+      - sharedKey: []
+      - entra: []
+    delete:
+      summary: Delete a share
+      operationId: deleteShare
+      tags:
+      - Shares
+      responses:
+        '202':
+          description: Deleted
+      security:
+      - sharedKey: []
+      - entra: []
+components:
+  securitySchemes:
+    sharedKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Shared Key authorization header in the form `SharedKey {account}:{signature}`,
+
+        where signature is an HMAC-SHA256 of the canonicalized request.
+
+        See https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key
+
+        '
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://storage.azure.com/.default: Azure Storage data plane access
