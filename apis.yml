@@ -10,7 +10,19 @@ description: >-
   access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for
   authentication, while the control plane uses Azure Resource Manager.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-file-storage.png
 tags:
   - Storage
   - File Storage
@@ -25,47 +37,85 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: azure-file-storage:filerest-api
-    name: Azure Files FileREST API
-    description: >-
-      Data-plane HTTPS REST API for operations on file shares, directories,
-      and files in Azure Files, including create, copy, lease, list, range,
-      and snapshot operations. Authentication uses shared key, shared access
-      signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
-    baseURL: https://{account-name}.file.core.windows.net
-    tags:
-      - Azure Files
-      - File Shares
-      - Data Plane
-      - Storage
-      - Azure
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
-      - type: Operations on Shares
-        url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-shares--file-service-
-      - type: Operations on Files
-        url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-files
-  - aid: azure-file-storage:storage-rp-api
-    name: Azure Storage Resource Provider API (File Services / Shares)
-    description: >-
-      Azure Resource Manager REST API for managing storage accounts,
-      FileService settings, and FileShare resources at the control-plane
-      level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
-    baseURL: https://management.azure.com
-    tags:
-      - Storage
-      - Control Plane
-      - Resource Manager
-      - Azure
-    properties:
-      - type: File Services
-        url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-services
-      - type: File Shares
-        url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
-
+- aid: azure-file-storage:filerest-api
+  name: Azure Files FileREST API
+  description: >-
+    Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including
+    create, copy, lease, list, range, and snapshot operations. Authentication uses shared key, shared
+    access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account-name}.file.core.windows.net
+  tags:
+  - Azure Files
+  - File Shares
+  - Data Plane
+  - Storage
+  - Azure
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  - type: Operations on Shares
+    url: >-
+      https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-shares--file-service-
+  - type: Operations on Files
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-files
+- aid: azure-file-storage:storage-rp-api
+  name: Azure Storage Resource Provider API (File Services / Shares)
+  description: >-
+    Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare
+    resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
+  baseURL: https://management.azure.com
+  tags:
+  - Storage
+  - Control Plane
+  - Resource Manager
+  - Azure
+  properties:
+  - type: File Services
+    url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-services
+  - type: File Shares
+    url: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
+- aid: azure-file-storage:azure-file-storage-account-api
+  name: Azure Files Account API
+  description: Account-level file service operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account-name}.file.core.windows.net
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-file-storage-account-api-openapi.yml
+- aid: azure-file-storage:azure-file-storage-directories-api
+  name: Azure Files Directories API
+  description: Directory operations within a share
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account-name}.file.core.windows.net
+  tags:
+  - Directories
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-file-storage-directories-api-openapi.yml
+- aid: azure-file-storage:azure-file-storage-files-api
+  name: Azure Files Files API
+  description: File operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account-name}.file.core.windows.net
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-file-storage-files-api-openapi.yml
+- aid: azure-file-storage:azure-file-storage-shares-api
+  name: Azure Files Shares API
+  description: File share operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account-name}.file.core.windows.net
+  tags:
+  - Shares
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-file-storage-shares-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/azure-file-storage-agentic-access.yml
