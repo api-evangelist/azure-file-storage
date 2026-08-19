@@ -1,0 +1,220 @@
+{
+  "item": [
+    {
+      "id": "cd3ef5c9-f52b-4cb6-838a-83b58b2cd073",
+      "name": "Account",
+      "description": {
+        "content": "Account-level file service operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3175aeb-864a-41ec-bace-ba0a4e6e7dae",
+          "name": "List shares or get file service properties",
+          "request": {
+            "name": "List shares or get file service properties",
+            "description": {
+              "content": "- With `?comp=list` lists shares in the account.\n- With `?restype=service&comp=properties` returns service properties.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "comp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxresults",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b8fb99b0-d6c4-4666-82c5-1270d86a1ff9",
+              "name": "XML listing or service properties",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "prefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxresults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Storage account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myaccount",
+      "key": "account-name"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account-name}}.file.core.windows.net",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9995ba21-fc94-4f25-b8a1-3572c446e25a",
+    "name": "Azure Files FileREST Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane HTTPS REST API for Azure Files. Operations are scoped to the\nstorage account (`https://{account-name}.file.core.windows.net`), with sub-paths\nfor shares, directories, and files. Many operations select a sub-resource via the\n`?comp=` and `?restype=` query parameters (Azure Storage convention).\n\nAuthentication: Shared Key (`SharedKey` Authorization header), Shared Access\nSignature (SAS tokens appended as query parameters), or Microsoft Entra ID\nOAuth 2.0 bearer tokens.\n\n\nContact Support:\n Name: Azure Files FileREST API",
+      "type": "text/plain"
+    }
+  }
+}

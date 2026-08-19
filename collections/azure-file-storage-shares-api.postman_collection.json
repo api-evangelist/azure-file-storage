@@ -1,0 +1,503 @@
+{
+  "item": [
+    {
+      "id": "f31eb2f9-ca26-463e-abcd-0633cab88af3",
+      "name": "Shares",
+      "description": {
+        "content": "File share operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1fc7bc87-ed02-47b3-8b4d-509ba0ee3a5d",
+          "name": "Create a share",
+          "request": {
+            "name": "Create a share",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-ms-share-quota",
+                "value": "<integer>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bd4020c0-3691-43ef-8265-38095853de28",
+              "name": "Share created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-share-quota",
+                    "value": "<integer>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ab249d5-fbb6-47fd-a534-6fd4e213e0e4",
+          "name": "Get share properties or metadata",
+          "request": {
+            "name": "Get share properties or metadata",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "comp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6fd2a95-02da-4493-8750-c1d8b3634260",
+              "name": "Share properties",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf04026c-48e5-4317-b836-647a8329905e",
+          "name": "Delete a share",
+          "request": {
+            "name": "Delete a share",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7015f3f9-6a80-47d8-9c65-94286c98a97a",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Storage account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myaccount",
+      "key": "account-name"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account-name}}.file.core.windows.net",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7bc542d2-781d-4a12-bdec-7b2ace4194ba",
+    "name": "Azure Files FileREST Account Shares API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane HTTPS REST API for Azure Files. Operations are scoped to the\nstorage account (`https://{account-name}.file.core.windows.net`), with sub-paths\nfor shares, directories, and files. Many operations select a sub-resource via the\n`?comp=` and `?restype=` query parameters (Azure Storage convention).\n\nAuthentication: Shared Key (`SharedKey` Authorization header), Shared Access\nSignature (SAS tokens appended as query parameters), or Microsoft Entra ID\nOAuth 2.0 bearer tokens.\n\n\nContact Support:\n Name: Azure Files FileREST API",
+      "type": "text/plain"
+    }
+  }
+}

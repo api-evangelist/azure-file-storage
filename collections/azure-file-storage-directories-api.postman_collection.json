@@ -1,0 +1,574 @@
+{
+  "item": [
+    {
+      "id": "77d51c42-6981-42b3-9b73-7d703a33d7e6",
+      "name": "Directories",
+      "description": {
+        "content": "Directory operations within a share",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ba7ca43-8992-45c3-9a15-ffd2c8e284d4",
+          "name": "Create a directory",
+          "request": {
+            "name": "Create a directory",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":directoryPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "directoryPath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "337a5d39-a966-416f-b5dc-ef959536624c",
+              "name": "Directory created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":directoryPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "directoryPath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2019c091-f1ac-4a5b-80de-085a4e914791",
+          "name": "List files and directories or get directory properties",
+          "request": {
+            "name": "List files and directories or get directory properties",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":directoryPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "comp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxresults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "directoryPath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "403028cf-d80a-4648-9da6-56dc988b5e22",
+              "name": "Listing or properties",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":directoryPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "prefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxresults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "directoryPath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb72d699-82d5-4187-b0de-c1f10b4d1471",
+          "name": "Delete a directory",
+          "request": {
+            "name": "Delete a directory",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":directoryPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "restype",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "directoryPath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c417f0c8-0bce-48a2-8e8f-8ec668854ae9",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":directoryPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "restype",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "directoryPath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Storage account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myaccount",
+      "key": "account-name"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account-name}}.file.core.windows.net",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d42d1115-6f8e-4a37-a8cf-7bcf28f2df94",
+    "name": "Azure Files FileREST Account Directories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane HTTPS REST API for Azure Files. Operations are scoped to the\nstorage account (`https://{account-name}.file.core.windows.net`), with sub-paths\nfor shares, directories, and files. Many operations select a sub-resource via the\n`?comp=` and `?restype=` query parameters (Azure Storage convention).\n\nAuthentication: Shared Key (`SharedKey` Authorization header), Shared Access\nSignature (SAS tokens appended as query parameters), or Microsoft Entra ID\nOAuth 2.0 bearer tokens.\n\n\nContact Support:\n Name: Azure Files FileREST API",
+      "type": "text/plain"
+    }
+  }
+}

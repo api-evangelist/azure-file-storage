@@ -1,0 +1,170 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Files FileREST Account Directories API",
+    "version": "2023-01-03"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Directories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List files and directories or get directory properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:directoryPath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "directoryPath",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "comp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "prefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxresults",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List files and directories or get directory properties"
+        },
+        {
+          "info": {
+            "name": "Create a directory",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:directoryPath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "directoryPath",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a directory"
+        },
+        {
+          "info": {
+            "name": "Delete a directory",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:directoryPath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "directoryPath",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a directory"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

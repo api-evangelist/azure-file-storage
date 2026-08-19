@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Files FileREST Account API",
+    "version": "2023-01-03"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List shares or get file service properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account-name}.file.core.windows.net/",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "comp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "prefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxresults",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "- With `?comp=list` lists shares in the account.\n- With `?restype=service&comp=properties` returns service properties.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

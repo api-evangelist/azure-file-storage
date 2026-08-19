@@ -1,0 +1,204 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure FileREST Account Files API",
+    "version": "2023-01-03"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download a file or get its properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:filePath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              },
+              {
+                "name": "x-ms-range",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "comp",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Download a file or get its properties"
+        },
+        {
+          "info": {
+            "name": "Create a file, set properties/metadata, or put a range",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:filePath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              },
+              {
+                "name": "x-ms-type",
+                "value": ""
+              },
+              {
+                "name": "x-ms-content-length",
+                "value": ""
+              },
+              {
+                "name": "x-ms-range",
+                "value": ""
+              },
+              {
+                "name": "x-ms-write",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "comp",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "- With `x-ms-type: file` and `x-ms-content-length`, creates an empty file.\n- With `?comp=range` and `x-ms-range`/`x-ms-write` headers, writes data into a range.\n- With `?comp=properties` or `?comp=metadata`, updates the file properties/metadata.\n"
+        },
+        {
+          "info": {
+            "name": "Delete a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:filePath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a file"
+        },
+        {
+          "info": {
+            "name": "Get file properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "HEAD",
+            "url": "https://{account-name}.file.core.windows.net/:shareName/:filePath",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get file properties"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

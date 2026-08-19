@@ -1,0 +1,942 @@
+{
+  "item": [
+    {
+      "id": "ddebb554-870e-4c3a-b21f-cef87e081f1e",
+      "name": "Files",
+      "description": {
+        "content": "File operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae585c52-2803-4c26-8b89-2c6eb0643eac",
+          "name": "Create a file, set properties/metadata, or put a range",
+          "request": {
+            "name": "Create a file, set properties/metadata, or put a range",
+            "description": {
+              "content": "- With `x-ms-type: file` and `x-ms-content-length`, creates an empty file.\n- With `?comp=range` and `x-ms-range`/`x-ms-write` headers, writes data into a range.\n- With `?comp=properties` or `?comp=metadata`, updates the file properties/metadata.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":shareName",
+                ":filePath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "comp",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filePath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-ms-type",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "x-ms-content-length",
+                "value": "<integer>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "x-ms-range",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "x-ms-write",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<binary>"
+            }
+          },
+          "response": [
+            {
+              "id": "a7f17717-24f4-4d7e-8bfd-cd9e5ea976b2",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-type",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-content-length",
+                    "value": "<integer>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-range",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-write",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac7a7d86-5849-46a3-9b56-e43135a18beb",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-type",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-content-length",
+                    "value": "<integer>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-range",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-write",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44030897-0afa-4a69-aaa9-c65742ff5684",
+          "name": "Download a file or get its properties",
+          "request": {
+            "name": "Download a file or get its properties",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":filePath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "comp",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filePath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-ms-range",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8029215e-e015-4bdf-96d7-56428cbe9a3d",
+              "name": "File contents or properties",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-range",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f75d240d-a5aa-4eee-ae70-938da9998512",
+              "name": "Partial file contents",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "comp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-ms-range",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Partial Content",
+              "code": 206,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "517c1d89-865d-4910-8770-694cdb26f9b5",
+          "name": "Delete a file",
+          "request": {
+            "name": "Delete a file",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":filePath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filePath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9f8b895c-6853-4afd-a647-bb7beccd3783",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1baa0499-0198-44c7-a222-85c0f09d3908",
+          "name": "Get file properties",
+          "request": {
+            "name": "Get file properties",
+            "description": {},
+            "url": {
+              "path": [
+                ":shareName",
+                ":filePath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shareName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filePath",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Storage account name",
+                  "type": "any",
+                  "value": "{{account-name}}",
+                  "key": "account-name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-version",
+                "value": "2023-01-03"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-ms-date",
+                "value": "<string>"
+              }
+            ],
+            "method": "HEAD",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "720a4ae1-981e-47e0-837f-697baff4cbec",
+              "name": "Properties returned in headers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":shareName",
+                    ":filePath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shareName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filePath",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Storage account name",
+                      "type": "any",
+                      "value": "{{account-name}}",
+                      "key": "account-name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-version",
+                    "value": "2023-01-03"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-ms-date",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "HEAD",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Storage account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myaccount",
+      "key": "account-name"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account-name}}.file.core.windows.net",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a8e67eb7-151b-4e42-89a8-19327b1a218f",
+    "name": "Azure FileREST Account Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane HTTPS REST API for Azure Files. Operations are scoped to the\nstorage account (`https://{account-name}.file.core.windows.net`), with sub-paths\nfor shares, directories, and files. Many operations select a sub-resource via the\n`?comp=` and `?restype=` query parameters (Azure Storage convention).\n\nAuthentication: Shared Key (`SharedKey` Authorization header), Shared Access\nSignature (SAS tokens appended as query parameters), or Microsoft Entra ID\nOAuth 2.0 bearer tokens.\n\n\nContact Support:\n Name: Azure Files FileREST API",
+      "type": "text/plain"
+    }
+  }
+}

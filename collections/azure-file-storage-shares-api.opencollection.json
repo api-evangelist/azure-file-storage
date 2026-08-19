@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Files FileREST Account Shares API",
+    "version": "2023-01-03"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shares",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get share properties or metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account-name}.file.core.windows.net/:shareName",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "comp",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get share properties or metadata"
+        },
+        {
+          "info": {
+            "name": "Create a share",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{account-name}.file.core.windows.net/:shareName",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              },
+              {
+                "name": "x-ms-share-quota",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a share"
+        },
+        {
+          "info": {
+            "name": "Delete a share",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{account-name}.file.core.windows.net/:shareName",
+            "headers": [
+              {
+                "name": "x-ms-version",
+                "value": ""
+              },
+              {
+                "name": "x-ms-date",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "shareName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "restype",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a share"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
