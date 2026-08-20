@@ -102,6 +102,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
