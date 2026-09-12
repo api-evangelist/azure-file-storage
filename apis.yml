@@ -35,7 +35,7 @@ tags:
 - NFS
 - Cloud
 - Azure
-url: https://raw.githubusercontent.com/api-evangelist/azure-file-storage/refs/heads/main/apis.yml
+url: https://azure.microsoft.com/en-us/products/storage/files/
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
