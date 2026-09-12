@@ -1,14 +1,6 @@
 aid: azure-file-storage
 name: Azure Files
-description: >-
-  Azure Files is a fully managed cloud file share service from Microsoft Azure
-  that provides hosted SMB and NFS file shares accessible from cloud and
-  on-premises clients using standard file system protocols and the FileREST
-  HTTPS API. It supports identity-based authentication via Active Directory
-  and Microsoft Entra ID, snapshots, soft delete, and Azure File Sync for
-  hybrid scenarios. The FileREST data-plane API uses shared key, shared
-  access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for
-  authentication, while the control plane uses Azure Resource Manager.
+description: Azure Files is a fully managed cloud file share service from Microsoft Azure that provides hosted SMB and NFS file shares accessible from cloud and on-premises clients using standard file system protocols and the FileREST HTTPS API. It supports identity-based authentication via Active Directory and Microsoft Entra ID, snapshots, soft delete, and Azure File Sync for hybrid scenarios. The FileREST data-plane API uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for authentication, while the control plane uses Azure Resource Manager.
 type: Index
 deliveryModel:
   model: saas
@@ -36,25 +28,21 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-file-storage.png
 tags:
-  - Storage
-  - File Storage
-  - File Shares
-  - SMB
-  - NFS
-  - Cloud
-  - Azure
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/azure-file-storage/refs/heads/main/apis.yml
+- Storage
+- File Storage
+- File Shares
+- SMB
+- NFS
+- Cloud
+- Azure
+url: https://raw.githubusercontent.com/api-evangelist/azure-file-storage/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
 apis:
 - aid: azure-file-storage:filerest-api
   name: Azure Files FileREST API
-  description: >-
-    Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including
-    create, copy, lease, list, range, and snapshot operations. Authentication uses shared key, shared
-    access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
+  description: Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including create, copy, lease, list, range, and snapshot operations. Authentication uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
   tags:
@@ -67,15 +55,12 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   - type: Operations on Shares
-    url: >-
-      https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-shares--file-service-
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-shares--file-service-
   - type: Operations on Files
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-files
 - aid: azure-file-storage:storage-rp-api
   name: Azure Storage Resource Provider API (File Services / Shares)
-  description: >-
-    Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare
-    resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
+  description: Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
   humanURL: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
   baseURL: https://management.azure.com
   tags:
@@ -130,29 +115,51 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/azure-file-storage-shares-api-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/azure-file-storage-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/azure-file-storage-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/azure-file-storage-domain-security.yml
-  - type: Authentication
-    url: authentication/azure-file-storage-authentication.yml
-  - type: OAuthScopes
-    url: scopes/azure-file-storage-scopes.yml
-  - type: Website
-    url: https://azure.microsoft.com/en-us/products/storage/files/
+- aid: microsoft-azure-file-storage:microsoft-azure-file-storage-shares-api
+  name: Azure File Storage Shares API
+  description: Shares operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+  baseURL: https://{account}.file.core.windows.net/
+  tags:
+  - Shares
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-file-storage-shares-api-openapi.yml
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/azure/storage/files/
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/storage/files/
-  - type: Signup
-    url: https://azure.microsoft.com/en-us/free/
-  - url: https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog
-    type: Blog
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
+common:
+- type: GitHubOrganization
+  url: https://github.com/Azure
+- type: Portal
+  url: https://portal.azure.com/
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Support
+  url: https://support.microsoft.com/
+- type: AgenticAccess
+  url: agentic-access/azure-file-storage-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/azure-file-storage-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/azure-file-storage-domain-security.yml
+- type: Authentication
+  url: authentication/azure-file-storage-authentication.yml
+- type: OAuthScopes
+  url: scopes/azure-file-storage-scopes.yml
+- type: Website
+  url: https://azure.microsoft.com/en-us/products/storage/files/
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/azure/storage/files/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/details/storage/files/
+- type: Signup
+  url: https://azure.microsoft.com/en-us/free/
+- url: https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog
+  type: Blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: microsoft-azure
 x-relationship: product
