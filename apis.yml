@@ -1,6 +1,11 @@
 aid: azure-file-storage
 name: Azure Files
-description: Azure Files is a fully managed cloud file share service from Microsoft Azure that provides hosted SMB and NFS file shares accessible from cloud and on-premises clients using standard file system protocols and the FileREST HTTPS API. It supports identity-based authentication via Active Directory and Microsoft Entra ID, snapshots, soft delete, and Azure File Sync for hybrid scenarios. The FileREST data-plane API uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for authentication, while the control plane uses Azure Resource Manager.
+description: Azure Files is a fully managed cloud file share service from Microsoft Azure that provides
+  hosted SMB and NFS file shares accessible from cloud and on-premises clients using standard file system
+  protocols and the FileREST HTTPS API. It supports identity-based authentication via Active Directory
+  and Microsoft Entra ID, snapshots, soft delete, and Azure File Sync for hybrid scenarios. The FileREST
+  data-plane API uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer
+  tokens for authentication, while the control plane uses Azure Resource Manager.
 type: Index
 deliveryModel:
   model: saas
@@ -37,12 +42,14 @@ tags:
 - Azure
 url: https://azure.microsoft.com/en-us/products/storage/files/
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: azure-file-storage:filerest-api
   name: Azure Files FileREST API
-  description: Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including create, copy, lease, list, range, and snapshot operations. Authentication uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
+  description: Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure
+    Files, including create, copy, lease, list, range, and snapshot operations. Authentication uses shared
+    key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
   tags:
@@ -60,7 +67,9 @@ apis:
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-files
 - aid: azure-file-storage:storage-rp-api
   name: Azure Storage Resource Provider API (File Services / Shares)
-  description: Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
+  description: Azure Resource Manager REST API for managing storage accounts, FileService settings, and
+    FileShare resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer
+    tokens.
   humanURL: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
   baseURL: https://management.azure.com
   tags:
@@ -94,7 +103,7 @@ apis:
   - type: OpenAPI
     url: openapi/azure-file-storage-directories-api-openapi.yml
 - aid: azure-file-storage:azure-file-storage-files-api
-  name: Azure Files Files API
+  name: Azure Files API
   description: File operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
