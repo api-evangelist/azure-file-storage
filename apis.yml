@@ -120,6 +120,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
   tags:
+  - Share
+  tags_raw:
   - Shares
   properties:
   - type: OpenAPI
@@ -130,6 +132,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account}.file.core.windows.net/
   tags:
+  - Share
+  tags_raw:
   - Shares
   properties:
   - type: OpenAPI
