@@ -15,9 +15,7 @@ info:
 
     Signature (SAS tokens appended as query parameters), or Microsoft Entra ID
 
-    OAuth 2.0 bearer tokens.
-
-    '
+    OAuth 2.0 bearer tokens.'
   contact:
     name: Azure Files FileREST API
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
@@ -37,9 +35,7 @@ paths:
       summary: List shares or get file service properties
       description: '- With `?comp=list` lists shares in the account.
 
-        - With `?restype=service&comp=properties` returns service properties.
-
-        '
+        - With `?restype=service&comp=properties` returns service properties.'
       operationId: listSharesOrGetServiceProperties
       tags:
       - Account
