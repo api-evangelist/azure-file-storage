@@ -36,10 +36,10 @@ tags:
 - Storage
 - File Storage
 - File Shares
-- SMB
 - NFS
 - Cloud
 - Azure
+- Server Message Block
 url: https://azure.microsoft.com/en-us/products/storage/files/
 created: '2026-05-11'
 modified: '2026-09-16'
