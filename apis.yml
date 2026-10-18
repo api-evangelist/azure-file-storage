@@ -38,6 +38,14 @@ tags:
 - File Shares
 - NFS
 - Cloud
+- Microsoft Azure
+- Server Message Block
+tags_raw:
+- Storage
+- File Storage
+- File Shares
+- NFS
+- Cloud
 - Azure
 - Server Message Block
 url: https://azure.microsoft.com/en-us/products/storage/files/
@@ -53,6 +61,12 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api
   baseURL: https://{account-name}.file.core.windows.net
   tags:
+  - Azure Files
+  - File Shares
+  - Data Plane
+  - Storage
+  - Microsoft Azure
+  tags_raw:
   - Azure Files
   - File Shares
   - Data Plane
@@ -73,6 +87,11 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares
   baseURL: https://management.azure.com
   tags:
+  - Storage
+  - Control Plane
+  - Resource Manager
+  - Microsoft Azure
+  tags_raw:
   - Storage
   - Control Plane
   - Resource Manager
