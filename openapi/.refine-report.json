@@ -1,26 +1,19 @@
 {
   "provider": "azure-file-storage",
   "sources": [
-    "_original/azure-file-storage-openapi.yml"
+    "_original/azure-file-storage-openapi.json"
   ],
   "outputs": [
-    "azure-file-storage-account-api-openapi.yml",
-    "azure-file-storage-directories-api-openapi.yml",
-    "azure-file-storage-files-api-openapi.yml",
-    "azure-file-storage-shares-api-openapi.yml"
+    "azure-file-storage-webapps-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "azure-file-storage-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "azure-file-storage-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "azure-file-storage-openapi.json: declared missing tag: WebApps",
+    "apis.yml register: written (+1 apis, 3 total)"
   ],
-  "skipped": [
-    "azure-file-storage-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "azure-file-storage-directories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "azure-file-storage-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "azure-file-storage-shares-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
