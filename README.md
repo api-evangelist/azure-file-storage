@@ -1,4 +1,4 @@
-# Azure Files (azure-file-storage)
+# Azure Files
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,81 +66,118 @@
 
 Azure Files is a fully managed cloud file share service from Microsoft Azure that provides hosted SMB and NFS file shares accessible from cloud and on-premises clients using standard file system protocols and the FileREST HTTPS API. It supports identity-based authentication via Active Directory and Microsoft Entra ID, snapshots, soft delete, and Azure File Sync for hybrid scenarios. The FileREST data-plane API uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens for authentication, while the control plane uses Azure Resource Manager.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/azure-file-storage/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/azure-file-storage/refs/heads/main/apis.yml)
+**Areas:** Storage · File Storage · File Shares · NFS · Cloud · Microsoft Azure · Server Message Block
 
-## Scope
+## Azure Files on APIs.io
 
-- **Type:** Index
+Everything profiled for Azure Files is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/azure-file-storage/](https://apis.io/providers/azure-file-storage/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Storage
-- File Storage
-- File Shares
-- SMB
-- NFS
-- Cloud
-- Azure
+- [Azure Files FileREST API](https://apis.io/apis/azure-file-storage/filerest-api/) — Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including create, copy, lease, list, range, and snapshot…
+- [Azure Storage Resource Provider API (File Services / Shares)](https://apis.io/apis/azure-file-storage/storage-rp-api/) — Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare resources at the control-plane level. Authentication uses…
+- [Azure Files Account API](https://apis.io/apis/azure-file-storage/azure-file-storage-account-api/) — Account-level file service operations
+- [Azure Files Directories API](https://apis.io/apis/azure-file-storage/azure-file-storage-directories-api/) — Directory operations within a share
+- [Azure Files API](https://apis.io/apis/azure-file-storage/azure-file-storage-files-api/) — File operations
+- [Azure Files Shares API](https://apis.io/apis/azure-file-storage/azure-file-storage-shares-api/) — File share operations
+- [Azure File Storage Shares API](https://apis.io/apis/azure-file-storage/microsoft-azure-file-storage-shares-api/) — Shares operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Azure Files FileREST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Data-plane HTTPS REST API for operations on file shares, directories, and files in Azure Files, including create, copy, lease, list, range, and snapshot operations. Authentication uses shared key, shared access signatures (SAS), or Microsoft Entra ID OAuth 2.0 bearer tokens.
+- [Azure File Storage Agentic Access](https://apis.io/agentic-access/azure-file-storage/azure-file-storage-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api](https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api)
-- **Base URL:** `https://{account-name}.file.core.windows.net`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Azure Files
-- File Shares
-- Data Plane
-- Storage
-- Azure
+- [Azure Files FileREST API](https://apis.io/collections/azure-file-storage/open-azure-file-storage/)
+- [Azure Files FileREST Account API](https://apis.io/collections/azure-file-storage/open-azure-file-storage-account-api/)
+- [Azure Files FileREST Account Directories API](https://apis.io/collections/azure-file-storage/open-azure-file-storage-directories-api/)
+- [Azure FileREST Account Files API](https://apis.io/collections/azure-file-storage/open-azure-file-storage-files-api/)
+- [Azure Files FileREST Account Shares API](https://apis.io/collections/azure-file-storage/open-azure-file-storage-shares-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api)
-- [Operations on  Shares](https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-shares--file-service-)
-- [Operations on  Files](https://learn.microsoft.com/en-us/rest/api/storageservices/operations-on-files)
-- [Postman Collection](collections/azure-file-storage.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/azure-file-storage.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Azure Storage Resource Provider API (File Services / Shares)
+- [Azure File Storage Authentication](https://apis.io/security/azure-file-storage/azure-file-storage-authentication/)
+- [Azure File Storage Domain Security](https://apis.io/security/azure-file-storage/azure-file-storage-domain-security/)
+- [Azure File Storage Vulnerability Disclosure](https://apis.io/security/azure-file-storage/azure-file-storage-vulnerability-disclosure/)
 
-Azure Resource Manager REST API for managing storage accounts, FileService settings, and FileShare resources at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares](https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares)
-- **Base URL:** `https://management.azure.com`
+The permissions the API asks for.
 
-#### Tags
+- [Azure File Storage Scopes](https://apis.io/scopes/azure-file-storage/azure-file-storage-scopes/)
 
-- Storage
-- Control Plane
-- Resource Manager
-- Azure
+## Where to find this API
 
-#### Properties
-
-- [File  Services](https://learn.microsoft.com/en-us/rest/api/storagerp/file-services)
-- [File  Shares](https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares)
-- [Postman Collection](collections/azure-file-storage.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/azure-file-storage.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://azure.microsoft.com/en-us/products/storage/files/)
 - [Documentation](https://learn.microsoft.com/en-us/azure/storage/files/)
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/storage/files/)
-- [Sign Up](https://azure.microsoft.com/en-us/free/)
+- [Support](https://support.microsoft.com/)
+- [Blog](https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=AzureStorageBlog)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/Azure)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 46.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 44.7 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/azure-file-storage/](https://apis.io/providers/azure-file-storage/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure Files: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/azure-file-storage/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
